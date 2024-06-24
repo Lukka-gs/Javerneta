@@ -1,4 +1,4 @@
-package javabanco;
+package test;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

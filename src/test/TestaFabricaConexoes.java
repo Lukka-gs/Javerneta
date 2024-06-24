@@ -1,8 +1,10 @@
-package javabanco;
+package test;
 
 
 import java.sql.Connection;
 import java.sql.SQLException;
+
+import javabanco.ConnectionFactory;
 
 public class TestaFabricaConexoes {
 	static Connection con;
