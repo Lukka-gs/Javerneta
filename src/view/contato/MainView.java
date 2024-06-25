@@ -23,8 +23,7 @@ public class MainView {
                     AdicionarContatoView.menu(scanner);
                     break;
                 case "2":
-                    System.out.println("Visualizando contatos...");
-                    // Chamar a classe de visualização de contatos
+                    VisualizarContatoView.menu(scanner);
                     break;
                 case "3":
                     System.out.println("Alterando contato...");
