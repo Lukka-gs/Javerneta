@@ -1,3 +1,5 @@
+package view.contato;
+
 import java.util.Scanner;
 
 public class MainView {
@@ -7,19 +9,18 @@ public class MainView {
         String opcao;
          
         do {
-            System.out.println("Escolha uma opção:");
+            System.out.println("Menu Principal:");
+            System.out.println("Escolha uma opcao:");
             System.out.println("1. Adicionar contato");
             System.out.println("2. Visualizar contato");
             System.out.println("3. Alterar contato");
             System.out.println("4. Deletar contato");
-            System.out.println("5. Sair do programa");
-            System.out.print("Digite sua escolha: ");
-            opcao = scanner.nextLine();
+            System.out.print("Digite sua escolha ou 'x' para sair do programa:\n");
+            opcao = scanner.nextLine().toLowerCase();
 
             switch (opcao) {
                 case "1":
-                    System.out.println("Adicionando contato...");
-                    // Chamar a classe de adição de contato
+                    AdicionarContatoView.menu(scanner);
                     break;
                 case "2":
                     System.out.println("Visualizando contatos...");
@@ -30,17 +31,16 @@ public class MainView {
                     // Chamar a classe de alteração de contato
                     break;
                 case "4":
-                    System.out.println("Deletando contato...");
-                    // Chamar a classe de remoção de contato
+                    RemoverContatoView.menu(scanner);
                     break;
-                case "5":
+                case "x":
                     System.out.println("Encerrando o programa...");
                     break;
                 default:
-                    System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
+                    System.out.println("Opcao invalida. Por favor, escolha uma opcao valida.");
                     break;
             }
-        } while (!opcao.equals("5"));
+        } while (!opcao.equals("x"));
 
         scanner.close();
     }
