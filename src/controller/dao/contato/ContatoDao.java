@@ -96,4 +96,9 @@ public class ContatoDao {
 		return contato;
 	}
 
+	public void UpdateContato() throws SQLException{
+
+	}
+
+
 }
