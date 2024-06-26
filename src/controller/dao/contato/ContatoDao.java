@@ -29,7 +29,27 @@ public class ContatoDao {
 		stmt.close();
 		con.close();
 	}
-	
+
+	public void UpdateContato(Contato contato) throws SQLException {
+		String query = "update contatos set nome = ?, email = ?, endereco = ? where id = ?";
+		PreparedStatement stmt = con.prepareStatement(query);
+		stmt.setString(1, contato.getNome());
+		stmt.setString(2, contato.getEmail());
+		stmt.setString(3, contato.getEndereco());
+		//stmt.setString(4, contato.getId()); Passa o Id como parâmetro pra localizar o contato?
+
+		int totalRegistrosAfetados = stmt.executeUpdate();
+
+		if (totalRegistrosAfetados == 0) {
+			System.out.println("Não foi possível atualizar o contato. Verifique o ID e tente novamente.");
+		} else {
+			System.out.println("Contato atualizado com sucesso.");
+		}
+
+		stmt.close();
+		con.close();
+	}
+
 	public List<Contato> getLista() throws SQLException{
 		String query = "select * from contatos";
 		PreparedStatement stmt = con.prepareStatement(query);
@@ -111,9 +131,5 @@ public class ContatoDao {
 
 		stmt.close();
 		con.close();
-	}
-
-	public void UpdateContato() throws SQLException{
-
 	}
 }
