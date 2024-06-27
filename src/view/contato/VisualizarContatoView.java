@@ -86,7 +86,7 @@ public class VisualizarContatoView {
 		try {
 			dao = new ContatoDao();
 
-			Contato contato = dao.getContatoPorId(scanner.nextLine());
+			Contato contato = dao.getPorId(scanner.nextLine());
 		
 			System.out.println("Nome do contato: " + contato.getNome());
 			System.out.println("E-mail do contato: " + contato.getEmail());

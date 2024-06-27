@@ -33,7 +33,7 @@ public class AlterarContatoView {
 		try {
 			dao = new ContatoDao();
 			String id = scanner.nextLine();
-			Contato contato = dao.getContatoPorId(id);
+			Contato contato = dao.getPorId(id);
 		
 			System.out.println("Nome do contato: " + contato.getNome());
 			System.out.println("Informe o novo nome do contato ou deixe em branco caso não queira modificar: ");
@@ -52,10 +52,10 @@ public class AlterarContatoView {
 	        contato.setEndereco(input.isEmpty() ? contato.getEndereco() : input);
 	        
 	        dao = new ContatoDao();
-	        dao.UpdateContato(contato, id);
+	        dao.update(contato, id);
 	        
 	        dao = new ContatoDao();
-	        contato = dao.getContatoPorId(id);
+	        contato = dao.getPorId(id);
 	        System.out.println("Nome do contato: " + contato.getNome());
 			System.out.println("E-mail do contato: " + contato.getEmail());
 			System.out.println("Endereco do contato: " + contato.getEndereco());

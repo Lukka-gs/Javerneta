@@ -9,15 +9,16 @@ import java.util.List;
 
 import javabanco.ConnectionFactory;
 import model.contato.Contato;
+import controller.dao.InterfaceDao;
 
-public class ContatoDao {
+public class ContatoDao implements InterfaceDao<Contato>{
 	private Connection con;
 	
 	public ContatoDao() throws SQLException { 
 		this.con = ConnectionFactory.getConnection();
 	}
 	
-	public void adiciona(Contato contato) throws SQLException {
+	public void add(Contato contato) throws SQLException {
 		String sql = "insert into contatos (nome, email, endereco) values (?,?,?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, contato.getNome());
@@ -30,7 +31,7 @@ public class ContatoDao {
 		con.close();
 	}
 
-	public void UpdateContato(Contato contato, String id) throws SQLException {
+	public void update(Contato contato, String id) throws SQLException {
 		String query = "update contatos set nome = ?, email = ?, endereco = ? where id = ?";
 		PreparedStatement stmt = con.prepareStatement(query);
 		stmt.setString(1, contato.getNome());
@@ -94,7 +95,7 @@ public class ContatoDao {
 		return contatos;
 	}
 
-	public Contato getContatoPorId(String Id) throws SQLException{
+	public Contato getPorId(String Id) throws SQLException{
 		String query = "select * from contatos where id = ?";
 		PreparedStatement stmt = con.prepareStatement(query);
 		stmt.setString(1, Id);
@@ -116,7 +117,7 @@ public class ContatoDao {
 		return contato;
 	}
 	
-	public void deletaPorId(String Id) throws SQLException{
+	public void deletePorId(String Id) throws SQLException{
 		String query = "delete from contatos where id = ?";
 		PreparedStatement stmt = con.prepareStatement(query);
 		stmt.setString(1, Id);
@@ -132,4 +133,5 @@ public class ContatoDao {
 		stmt.close();
 		con.close();
 	}
+
 }

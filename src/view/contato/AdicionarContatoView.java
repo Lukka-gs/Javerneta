@@ -39,7 +39,7 @@ public class AdicionarContatoView {
 	    
 	    try {
 			ContatoDao dao = new ContatoDao();
-			dao.adiciona(contato);
+			dao.add(contato);
 			System.out.println("Gravacao feita no Banco de Dados");
 		} catch (SQLException e) {
 			e.printStackTrace();

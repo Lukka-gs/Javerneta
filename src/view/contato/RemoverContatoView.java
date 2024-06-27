@@ -30,7 +30,7 @@ public class RemoverContatoView {
 	    
 	    try {
 			ContatoDao dao = new ContatoDao();
-			dao.deletaPorId(scanner.nextLine());
+			dao.deletePorId(scanner.nextLine());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
