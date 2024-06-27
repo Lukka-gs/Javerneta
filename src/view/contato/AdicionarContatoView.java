@@ -28,13 +28,13 @@ public class AdicionarContatoView {
 	private static void adicionar(Scanner scanner) {
 		Contato contato = new Contato();
     	  
-	    System.out.print("Por favor, digite seu nome: ");
+	    System.out.print("Por favor, digite o nome: ");
 	    contato.setNome(scanner.nextLine());
 	    
-	    System.out.print("Por favor, digite seu email: ");
+	    System.out.print("Por favor, digite o email: ");
 	    contato.setEmail(scanner.nextLine());
 	    
-	    System.out.print("Por favor, digite seu endereco: ");
+	    System.out.print("Por favor, digite o endereco: ");
 	    contato.setEndereco(scanner.nextLine());
 	    
 	    try {

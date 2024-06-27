@@ -1,4 +1,9 @@
-package view.contato;
+package view.main;
+
+import view.contato.AdicionarContatoView;
+import view.contato.AlterarContatoView;
+import view.contato.RemoverContatoView;
+import view.contato.VisualizarContatoView;
 
 import java.util.Scanner;
 
