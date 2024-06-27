@@ -26,8 +26,7 @@ public class MainView {
                     VisualizarContatoView.menu(scanner);
                     break;
                 case "3":
-                    System.out.println("Alterando contato...");
-                    // Chamar a classe de alteração de contato
+                    AlterarContatoView.menu(scanner);
                     break;
                 case "4":
                     RemoverContatoView.menu(scanner);

@@ -30,13 +30,13 @@ public class ContatoDao {
 		con.close();
 	}
 
-	public void UpdateContato(Contato contato) throws SQLException {
+	public void UpdateContato(Contato contato, String id) throws SQLException {
 		String query = "update contatos set nome = ?, email = ?, endereco = ? where id = ?";
 		PreparedStatement stmt = con.prepareStatement(query);
 		stmt.setString(1, contato.getNome());
 		stmt.setString(2, contato.getEmail());
 		stmt.setString(3, contato.getEndereco());
-		//stmt.setString(4, contato.getId()); Passa o Id como parâmetro pra localizar o contato?
+		stmt.setString(4, id);
 
 		int totalRegistrosAfetados = stmt.executeUpdate();
 
