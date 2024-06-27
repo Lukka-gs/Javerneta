@@ -47,7 +47,7 @@ public class AlterarContatoView {
 	        
 	        
 			System.out.println("Endereco do contato: " + contato.getEndereco());
-			System.out.println("Informe o novo e-mail do contato ou deixe em branco caso não queira modificar: ");
+			System.out.println("Informe o novo endereço do contato ou deixe em branco caso não queira modificar: ");
 			input = scanner.nextLine();
 	        contato.setEndereco(input.isEmpty() ? contato.getEndereco() : input);
 	        
