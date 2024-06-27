@@ -51,8 +51,10 @@ public class AlterarContatoView {
 			input = scanner.nextLine();
 	        contato.setEndereco(input.isEmpty() ? contato.getEndereco() : input);
 	        
+	        dao = new ContatoDao();
 	        dao.UpdateContato(contato, id);
 	        
+	        dao = new ContatoDao();
 	        contato = dao.getContatoPorId(id);
 	        System.out.println("Nome do contato: " + contato.getNome());
 			System.out.println("E-mail do contato: " + contato.getEmail());
